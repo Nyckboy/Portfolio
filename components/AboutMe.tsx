@@ -105,7 +105,7 @@ const AboutMe: React.FC = () => {
             <div className="relative w-64 h-64 md:w-80 md:h-80 group">
               <div className="absolute inset-0 rounded-lg bg-white/10 border border-white/20 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:-translate-y-2"></div>
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="/killua.jpeg"
                 alt="Portrait of Mouad Abbassid"
                 className="absolute inset-0 w-full h-full object-cover rounded-lg grayscale hover:grayscale-0 transition-all duration-300"
               />

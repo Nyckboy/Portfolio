@@ -7,32 +7,28 @@ const projectsData: Project[] = [
     description:
       "A centralized HR platform for IT-Road that lets employees request documents, leaves, and approvals directly from managers and HR—eliminating verbal requests and improving workflow transparency.",
     tech: ["React", "TypeScript", "Spring-Boot"],
-    image:
-      "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2071&auto=format&fit=crop",
+    image: "/HrDesk2.png",
   },
   {
     title: "TimeSheet",
     description:
       "A web app that tracks employee work hours for IT-Road and automatically generates detailed Word-format timesheets for end-of-month payroll, streamlining HR and admin tasks.",
     tech: ["React", "TypeScript", "Spring-Boot"],
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop",
+    image: "/timesheetapp.png",
   },
   {
     title: "AeroVision",
     description:
       "AeroVision is a desktop app built with Python that uses machine learning models like K-Means, Linear Regression, and Random Forest to analyze data and generate accurate predictions through a simple, intuitive interface.",
     tech: ["Python"],
-    image:
-      "https://storage.googleapis.com/aistudio-hosting/images/41c45053-5d57-4148-8424-63f53835cc99.png",
+    image: "/aerovison.png",
   },
   {
     title: "CandidApp",
     description:
       "A recruitment web app built with Django and React where companies post jobs, candidates apply, and both sides manage applications through a clean, user-friendly interface.",
     tech: ["Django", "React"],
-    image:
-      "https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=2070&auto=format&fit=crop",
+    image: "/candidapp.png",
   },
 ];
 
@@ -102,4 +98,3 @@ const Projects: React.FC<ProjectsProps> = ({ onCardHover }) => {
 };
 
 export default Projects;
-

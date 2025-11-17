@@ -1,17 +1,16 @@
-
-import React, { useState, useEffect } from 'react';
-import WorkTogether from './WorkTogether';
-import SideElements from './SideElements';
-import InteractiveText from './InteractiveText';
-import AboutMe from './AboutMe';
-import Projects from './Projects';
-import Footer from './Footer';
+import React, { useState, useEffect } from "react";
+import WorkTogether from "./WorkTogether";
+import SideElements from "./SideElements";
+import InteractiveText from "./InteractiveText";
+import AboutMe from "./AboutMe";
+import Projects from "./Projects";
+import Footer from "./Footer";
 
 const HomeScreen: React.FC = () => {
   const [visible, setVisible] = useState(false);
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
   const [cursorVisible, setCursorVisible] = useState(true);
-  
+
   useEffect(() => {
     // A small delay to ensure the main component is mounted before starting animations.
     const timer = setTimeout(() => setVisible(true), 100);
@@ -20,11 +19,11 @@ const HomeScreen: React.FC = () => {
       setMousePos({ x: event.clientX, y: event.clientY });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       clearTimeout(timer);
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
@@ -36,13 +35,13 @@ const HomeScreen: React.FC = () => {
     transform: `translate(${mousePos.x}px, ${mousePos.y}px) translate(-50%, -50%) scale(${cursorVisible ? 1 : 0})`,
     opacity: cursorVisible ? 1 : 0,
   };
-  
+
   return (
     <>
       <div
         id="ball"
         className="fixed top-0 left-0 bg-white rounded-full pointer-events-none mix-blend-difference z-50 transition-all duration-300 ease-out"
-        style={{...ballStyle, width: '32px', height: '32px'}}
+        style={{ ...ballStyle, width: "32px", height: "32px" }}
       ></div>
 
       <SideElements visible={visible} />
@@ -50,16 +49,15 @@ const HomeScreen: React.FC = () => {
       <main
         id="home"
         className={`relative flex flex-col items-center justify-center min-h-screen p-8 transition-opacity duration-1000 ease-in ${
-          visible ? 'opacity-100' : 'opacity-0'
+          visible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div 
+        <div
           className="absolute top-8 right-8 z-20 animate-slide-down"
-          style={{ animationDelay: '1.0s', opacity: 0 }}
+          style={{ animationDelay: "1.0s", opacity: 0 }}
         >
           <a
             href="/resume.pdf"
-            download
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={() => handleInteractiveHover(true)}
@@ -72,16 +70,22 @@ const HomeScreen: React.FC = () => {
 
         <div className="text-center z-10">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold font-orbitron uppercase leading-none tracking-tighter text-white">
-            <span className="block animate-slide-up" style={{ animationDelay: '0.2s', opacity: 0 }}>
+            <span
+              className="block animate-slide-up"
+              style={{ animationDelay: "0.2s", opacity: 0 }}
+            >
               <InteractiveText text="Mouad" mousePos={mousePos} />
             </span>
-            <span className="block animate-slide-up" style={{ animationDelay: '0.4s', opacity: 0 }}>
+            <span
+              className="block animate-slide-up"
+              style={{ animationDelay: "0.4s", opacity: 0 }}
+            >
               <InteractiveText text="Abbassid" mousePos={mousePos} />
             </span>
           </h1>
           <p
             className="text-sm md:text-base font-light tracking-[0.3em] uppercase mt-4 text-gray-300 animate-slide-up"
-            style={{ animationDelay: '0.6s', opacity: 0 }}
+            style={{ animationDelay: "0.6s", opacity: 0 }}
           >
             Creative Developer & Digital Artist
           </p>
@@ -104,3 +108,4 @@ const HomeScreen: React.FC = () => {
 };
 
 export default HomeScreen;
+

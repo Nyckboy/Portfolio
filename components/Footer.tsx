@@ -52,14 +52,6 @@ const Footer: React.FC = () => {
                   Contact
                 </a>
               </li>
-              <li>
-                <a
-                  href="mailto:mouad.abbassid@example.com" // Replace with your email
-                  className="text-gray-400 tracking-widest text-sm hover:text-white hover:-translate-y-1 transition-all duration-300 font-space-grotesk"
-                >
-                  mouad.abbassid@example.com
-                </a>
-              </li>
             </ul>
             <p className="mt-10 text-lg italic text-white/60">
               “Tout ça c'est le destin, mon pote.” - Ninho

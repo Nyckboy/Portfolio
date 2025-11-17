@@ -1,5 +1,0 @@
-{
-  "name": "Creative Loading Screen",
-  "description": "A React application that replicates the creative loading screen from stefanobartoletti.it, featuring a percentage counter with a mix-blend effect over a revealing background image.",
-  "requestFramePermissions": []
-}

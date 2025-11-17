@@ -1,40 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Creative Loading Screen</title>
+    <title>Mouad Abbassid</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       /* Custom font to better match the reference site */
-      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Playfair+Display:wght@700&family=Roboto:wght@300&family=Space+Grotesk:wght@400;700&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Playfair+Display:wght@700&family=Roboto:wght@300&family=Space+Grotesk:wght@400;700&display=swap");
       body {
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         cursor: none; /* Hide default cursor globally */
       }
       /* Ensure default pointer is hidden on interactive elements */
-      a, button {
+      a,
+      button {
         cursor: none;
       }
       .font-serif-display {
-        font-family: 'Playfair Display', serif;
+        font-family: "Playfair Display", serif;
       }
       .font-space-grotesk {
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: "Space Grotesk", sans-serif;
       }
       .font-orbitron {
-        font-family: 'Orbitron', sans-serif;
+        font-family: "Orbitron", sans-serif;
       }
 
       /* Animation for greeting text */
       @keyframes fadeIn {
-        0% { opacity: 0; transform: translateY(25px); }
-        100% { opacity: 1; transform: translateY(0); }
+        0% {
+          opacity: 0;
+          transform: translateY(25px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       .animate-greeting {
         animation: fadeIn 1s ease-out forwards;
       }
-      
+
       /* New keyframes for moving lines */
       @keyframes animate-lines {
         0% {
@@ -47,9 +54,15 @@
 
       /* New background gradient animation */
       @keyframes gradient-shift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
       .animated-gradient {
         position: relative;
@@ -58,17 +71,29 @@
         background-size: 400% 400%;
         animation: gradient-shift 25s ease-infinite;
       }
-      
+
       .animated-gradient::before {
-        content: '';
+        content: "";
         position: absolute;
         inset: 0;
-        background-image: 
-          repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 80px),
-          repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 80px);
+        background-image:
+          repeating-linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.02),
+            rgba(255, 255, 255, 0.02) 1px,
+            transparent 1px,
+            transparent 80px
+          ),
+          repeating-linear-gradient(
+            -45deg,
+            rgba(255, 255, 255, 0.02),
+            rgba(255, 255, 255, 0.02) 1px,
+            transparent 1px,
+            transparent 80px
+          );
         animation: animate-lines 40s linear infinite;
       }
-      
+
       /* New text entrance animation */
       @keyframes slideUpFadeIn {
         from {
@@ -80,7 +105,7 @@
           transform: translateY(0);
         }
       }
-      
+
       @keyframes slideDownFadeIn {
         from {
           opacity: 0;
@@ -123,7 +148,7 @@
       .writing-mode-vertical-rl {
         writing-mode: vertical-rl;
       }
-      
+
       /* Custom Scrollbar Styles */
       /* For Firefox */
       html {
@@ -146,21 +171,13 @@
       ::-webkit-scrollbar-thumb:hover {
         background-color: rgba(255, 255, 255, 0.5);
       }
-
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
-<body>
+
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
-</body>
+  </body>
 </html>
+

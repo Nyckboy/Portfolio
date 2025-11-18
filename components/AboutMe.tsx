@@ -41,7 +41,7 @@ const AboutMe: React.FC = () => {
     <section
       ref={sectionRef}
       id="about"
-      className="min-h-screen flex items-center justify-center container mx-auto px-24 py-24 text-white"
+      className="min-h-screen flex items-center justify-center container mx-auto px-10 lg:px-24 py-24 text-white"
     >
       <div
         className={`transition-opacity duration-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}

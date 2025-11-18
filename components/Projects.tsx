@@ -1,5 +1,11 @@
 import React from "react";
 import ProjectCard, { Project } from "./ProjectCard";
+import MobileProjectCard from "./MobileProjectCard";
+
+interface ProjectCardProps {
+  project: Project;
+  onHover: (isHovering: boolean) => void;
+}
 
 const projectsData: Project[] = [
   {
@@ -36,6 +42,25 @@ interface ProjectsProps {
   onCardHover: (isHovering: boolean) => void;
 }
 
+const ResponsiveProject: React.FC<ProjectCardProps> = ({
+  project,
+  onHover,
+}) => {
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
+
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return isMobile ? (
+    <MobileProjectCard project={project} onHover={onHover} />
+  ) : (
+    <ProjectCard project={project} onHover={onHover} />
+  );
+};
 const Projects: React.FC<ProjectsProps> = ({ onCardHover }) => {
   const sectionRef = React.useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = React.useState(false);
@@ -67,7 +92,7 @@ const Projects: React.FC<ProjectsProps> = ({ onCardHover }) => {
     <section
       ref={sectionRef}
       id="phttps://www.stefanobartoletti.it/rojects"
-      className="min-h-screen container mx-auto px-24 py-24 text-white"
+      className="min-h-screen container mx-auto px-10 lg:px-24 py-24 text-white"
     >
       <div
         className={`transition-opacity duration-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}
@@ -78,7 +103,7 @@ const Projects: React.FC<ProjectsProps> = ({ onCardHover }) => {
         >
           Selected Works
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           {projectsData.map((project, index) => (
             <div
               key={project.title}
@@ -88,7 +113,7 @@ const Projects: React.FC<ProjectsProps> = ({ onCardHover }) => {
                 animationDelay: `${0.3 + index * 0.15}s`,
               }}
             >
-              <ProjectCard project={project} onHover={onCardHover} />
+              <ResponsiveProject project={project} onHover={onCardHover} />
             </div>
           ))}
         </div>

@@ -91,7 +91,7 @@ const Projects: React.FC<ProjectsProps> = ({ onCardHover }) => {
   return (
     <section
       ref={sectionRef}
-      id="phttps://www.stefanobartoletti.it/rojects"
+      id="pojects"
       className="min-h-screen container mx-auto px-10 lg:px-24 py-24 text-white"
     >
       <div
